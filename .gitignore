@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# raw data and trained artifacts — regenerate, don't commit
+data/raw/
+backend/models/
+
+# node
+node_modules/
+
+# OS
+.DS_Store
