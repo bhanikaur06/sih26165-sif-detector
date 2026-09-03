@@ -1,0 +1,16 @@
+{
+  "summary_stats": { "total_reports": 428, "sif_count": 66, "density": 0.154 },
+  "precursor_density_by_group": [
+    { "group": "Drilling Ops", "group_type": "activity", "total_reports": 120, "sif_count": 30, "density": 0.250 },
+    { "group": "Pipeline Maintenance", "group_type": "activity", "total_reports": 95, "sif_count": 15, "density": 0.158 },
+    { "group": "Storage Yard", "group_type": "activity", "total_reports": 80, "sif_count": 6, "density": 0.075 },
+    { "group": "Transport", "group_type": "activity", "total_reports": 133, "sif_count": 15, "density": 0.113 }
+  ],
+  "rule_breakdown": [
+    { "life_saving_rule": "Line of Fire", "count": 18 },
+    { "life_saving_rule": "Energy Isolation", "count": 14 },
+    { "life_saving_rule": "Working at Height", "count": 11 },
+    { "life_saving_rule": "Confined Space", "count": 9 },
+    { "life_saving_rule": "Hot Work", "count": 9 }
+  ]
+}

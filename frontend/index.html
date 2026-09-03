@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIF Precursor Dashboard — SIH26165</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <h1>SIF Precursor Detection Dashboard</h1>
+</header>
+
+<main class="dashboard">
+
+  <section class="stat-row">
+    <div class="stat-card">
+      <span class="stat-card__label">Total reports</span>
+      <span class="stat-card__value" id="stat-total-reports">—</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-card__label">SIF precursors flagged</span>
+      <span class="stat-card__value" id="stat-sif-count">—</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-card__label">Overall density</span>
+      <span class="stat-card__value" id="stat-density">—</span>
+    </div>
+  </section>
+
+  <section class="chart-row">
+    <div class="chart-container" id="density-chart">
+      <h2>Precursor Density by Group</h2>
+      <div class="filter-row">
+        <label for="severity-filter" class="filter-row__label">Filter by severity</label>
+        <select id="severity-filter" class="filter-select">
+          <option value="all" selected>All</option>
+          <option value="high">High only</option>
+          <option value="mid">Medium only</option>
+          <option value="low">Low only</option>
+        </select>
+      </div>
+      <ol class="bar-list" id="density-chart-body"></ol>
+      <div class="legend">
+        <span class="legend__item"><i class="legend__swatch legend__swatch--low"></i>Under 10%</span>
+        <span class="legend__item"><i class="legend__swatch legend__swatch--mid"></i>10–20%</span>
+        <span class="legend__item"><i class="legend__swatch legend__swatch--high"></i>Over 20%</span>
+      </div>
+    </div>
+    <div class="chart-container" id="rule-chart">
+      <h2>Life-Saving Rule Breakdown</h2>
+      <ol class="bar-list" id="rule-chart-body"></ol>
+    </div>
+  </section>
+
+  <section class="chart-container" id="group-detail">
+    <h2>Group Detail</h2>
+    <table class="detail-table">
+      <thead>
+        <tr>
+          <th>Group</th>
+          <th>Type</th>
+          <th>Total Reports</th>
+          <th>SIF Count</th>
+          <th>Density</th>
+        </tr>
+      </thead>
+      <tbody id="detail-table-body"></tbody>
+    </table>
+  </section>
+
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>

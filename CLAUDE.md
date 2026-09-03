@@ -67,6 +67,7 @@ Response:
 Response:
 ```json
 {
+  "summary_stats": { "total_reports": 0, "sif_count": 0, "density": 0.0 },
   "precursor_density_by_group": [
     { "group": "<string>", "group_type": "<string>", "total_reports": 0, "sif_count": 0, "density": 0.0 }
   ],
@@ -75,6 +76,8 @@ Response:
   ]
 }
 ```
+
+`summary_stats` field names are confirmed with backend.
 
 Backend decides what "group" means (site, activity, etc.) based on what fields
 survive in the processed data — frontend renders whatever groups come back.
