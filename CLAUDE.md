@@ -41,9 +41,26 @@ backend. Columns:
 | source_code | string | original MSHA IMMEDNOTIFYCD, kept for traceability |
 | split | string | "train", "val", or "test" |
 
+Plus these grouping columns, added for the dashboard's
+`precursor_density_by_group`. A missing value is written as an empty field —
+never a placeholder like "NO VALUE FOUND" — so pandas reads it back as `NaN`
+unless you pass `keep_default_na=False`. Read `source_code` and `mine_id` as
+strings; they have leading zeros.
+
+| column | type | fill | distinct | notes |
+|---|---|---|---|---|
+| mine_id | string | 100% | 8,634 | MSHA mine identifier |
+| operator_name | string | 99.5% | 6,157 | too high-cardinality to chart directly |
+| activity | string | 71.8% | 98 | what the person was doing |
+| subunit | string | 100% | 10 | best default grouping — clean, low cardinality |
+
 `data/processed/oil_validation.csv` — same columns, holds ~150-200 hand-written
 Indian-oilfield-style reports for honest domain-transfer reporting. Never mix
-this into the MSHA train/val/test split.
+this into the MSHA train/val/test split; its `split` value is always
+`"oil_validation"`, so filtering on `split` cannot pull it in by accident. Its
+`source_code` is an IOGP Life-Saving Rule category tag (`LSR_*` / `NONSIF_*`),
+not an MSHA code, and its grouping columns use oilfield values
+(`GGS-02`, `DRILLING RIG`, …) so the dashboard can be demoed on it.
 
 ## Interface contract — API
 

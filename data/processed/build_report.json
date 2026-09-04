@@ -1,0 +1,99 @@
+{
+  "raw_rows": 274567,
+  "blank_code_policy": "drop",
+  "dropped_missing_immed_notify_cd": 182479,
+  "dropped_missing_or_short_narrative": 130,
+  "dropped_duplicate_narrative": 574,
+  "dropped_unmapped_code": 0,
+  "final_rows": 91386,
+  "label_balance_overall": {
+    "0": 55433,
+    "1": 35953
+  },
+  "label_balance_by_split": {
+    "train": {
+      "0": 38803,
+      "1": 25167
+    },
+    "val": {
+      "0": 8315,
+      "1": 5393
+    },
+    "test": {
+      "0": 8315,
+      "1": 5393
+    }
+  },
+  "rows_per_split": {
+    "train": 63970,
+    "test": 13708,
+    "val": 13708
+  },
+  "source_code_distribution": {
+    "13": 55433,
+    "08": 17259,
+    "02": 8471,
+    "11": 4375,
+    "06": 1717,
+    "01": 1131,
+    "05": 1023,
+    "03": 833,
+    "04": 444,
+    "12": 331,
+    "09": 195,
+    "07": 116,
+    "10": 58
+  },
+  "grouping_columns": {
+    "mine_id": {
+      "populated_rows": 91386,
+      "fill_rate_pct": 100.0,
+      "distinct_values": 8634
+    },
+    "operator_name": {
+      "populated_rows": 90902,
+      "fill_rate_pct": 99.5,
+      "distinct_values": 6157
+    },
+    "activity": {
+      "populated_rows": 65631,
+      "fill_rate_pct": 71.8,
+      "distinct_values": 98
+    },
+    "subunit": {
+      "populated_rows": 91386,
+      "fill_rate_pct": 100.0,
+      "distinct_values": 10
+    }
+  },
+  "qa_sif_label_vs_degree_injury": {
+    "0": {
+      "ACCIDENT ONLY": 552,
+      "ALL OTHER CASES (INCL 1ST AID)": 422,
+      "DAYS AWAY FROM WORK ONLY": 22049,
+      "DAYS RESTRICTED ACTIVITY ONLY": 8897,
+      "DYS AWY FRM WRK & RESTRCTD ACT": 3715,
+      "FATALITY": 1,
+      "INJURIES DUE TO NATURAL CAUSES": 182,
+      "INJURIES INVOLVNG NONEMPLOYEES": 45,
+      "NO DYS AWY FRM WRK,NO RSTR ACT": 16466,
+      "NO VALUE FOUND": 0,
+      "OCCUPATNAL ILLNESS NOT DEG 1-6": 2583,
+      "PERM TOT OR PERM PRTL DISABLTY": 521
+    },
+    "1": {
+      "ACCIDENT ONLY": 25193,
+      "ALL OTHER CASES (INCL 1ST AID)": 129,
+      "DAYS AWAY FROM WORK ONLY": 4649,
+      "DAYS RESTRICTED ACTIVITY ONLY": 1042,
+      "DYS AWY FRM WRK & RESTRCTD ACT": 926,
+      "FATALITY": 1128,
+      "INJURIES DUE TO NATURAL CAUSES": 150,
+      "INJURIES INVOLVNG NONEMPLOYEES": 70,
+      "NO DYS AWY FRM WRK,NO RSTR ACT": 2181,
+      "NO VALUE FOUND": 5,
+      "OCCUPATNAL ILLNESS NOT DEG 1-6": 170,
+      "PERM TOT OR PERM PRTL DISABLTY": 310
+    }
+  }
+}

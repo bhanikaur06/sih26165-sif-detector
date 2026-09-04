@@ -1,0 +1,23 @@
+{
+  "total_rows": 174,
+  "label_balance": {
+    "1": 102,
+    "0": 72
+  },
+  "rows_per_category": {
+    "NONSIF_ADM": 22,
+    "NONSIF_HK": 22,
+    "NONSIF_ERG": 14,
+    "NONSIF_PPE": 14,
+    "LSR_CS": 11,
+    "LSR_LIFT": 11,
+    "LSR_HW": 11,
+    "LSR_LOF": 11,
+    "LSR_ISO": 11,
+    "LSR_WAH": 11,
+    "LSR_PTW": 10,
+    "LSR_BYP": 10,
+    "LSR_DRV": 10,
+    "LSR_GAS": 6
+  }
+}
