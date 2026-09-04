@@ -59,3 +59,27 @@ reports (FN + TP) were missed, a ~19.6% miss rate on genuine precursors,
 i.e. roughly **1 in 5 real oilfield SIF precursors still slip through**
 uncaught. The over-flagging tendency reduces the cost of the model's
 mistakes; it does not eliminate the cost of the ones it still makes.
+
+## This is a ranking failure, not a calibration one
+
+Two real predictions from the live `/api/dashboard/summary` output, both on
+`oil_validation.csv` narratives:
+
+- `NONSIF_ADM`, *"A minor formatting error was found in the weekly
+  non-operational activity report."* — **0.888**, the single highest-confidence
+  positive prediction in the whole set.
+- `LSR_LOF`, *"A wire rope sling parted under load during a pipe-handling job
+  on the catwalk, sending the pipe rolling toward the crew."* — **0.251**,
+  called negative.
+
+A formatting error outranks a sling failure that sent a pipe rolling toward a
+crew. No single decision threshold fixes this: the two scores are on the
+wrong sides of each other, not just the wrong side of some cutoff. Moving the
+threshold up to reject the formatting-error false positive (0.888) would only
+push the sling-failure false negative (0.251) further from being caught, not
+closer — they'd both still be wrong, and the true positive would be wronger.
+The 0.5 cutoff isn't miscalibrated on this pair; the model's underlying
+ranking of the two narratives is inverted. That's the vocabulary-blindness
+problem above showing up directly in a live response rather than staying
+implicit in an aggregate metric — worth reading as a concrete instance of it,
+not a separate issue.
