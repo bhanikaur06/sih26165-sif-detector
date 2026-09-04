@@ -77,7 +77,10 @@ Response:
 }
 ```
 
-`summary_stats` field names are confirmed with backend.
+`summary_stats` field names are confirmed with backend. Same field names as a
+per-group entry, but computed directly over the whole report population — not
+summed from `precursor_density_by_group`, since that array can mix multiple
+`group_type` values and summing it would double-count reports.
 
 Backend decides what "group" means (site, activity, etc.) based on what fields
 survive in the processed data — frontend renders whatever groups come back.
