@@ -1,5 +1,7 @@
+const API_BASE = "http://127.0.0.1:5001";
+
 async function loadDashboardSummary() {
-  const response = await fetch("mock/dashboard_summary.json");
+  const response = await fetch(`${API_BASE}/api/dashboard/summary`);
   return response.json();
 }
 
