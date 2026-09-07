@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SIF Precursor Dashboard — SIH26165</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,6 +16,21 @@
 </header>
 
 <main class="dashboard">
+
+  <section class="chart-container" id="try-live">
+    <h2>Try It Live</h2>
+    <label for="try-live-input" class="try-live__hint">Paste an incident narrative to score it against the live model.</label>
+    <textarea id="try-live-input" class="try-live__input" rows="4" placeholder="e.g. Worker entered a confined space vessel without gas testing or a standby attendant posted."></textarea>
+    <button id="try-live-submit" class="btn" type="button">Classify narrative</button>
+    <p id="try-live-error" class="try-live__error" hidden></p>
+    <div id="try-live-result" class="try-live__result" hidden>
+      <div class="try-live__verdict">
+        <span id="try-live-label" class="try-live__label"></span>
+        <span id="try-live-probability" class="try-live__probability"></span>
+      </div>
+      <p id="try-live-rule" class="try-live__rule" hidden></p>
+    </div>
+  </section>
 
   <section class="stat-row">
     <div class="stat-card">
@@ -41,33 +59,37 @@
           <option value="low">Low only</option>
         </select>
       </div>
-      <ol class="bar-list" id="density-chart-body"></ol>
+      <div class="svg-bar-chart" id="density-chart-body"></div>
       <div class="legend">
         <span class="legend__item"><i class="legend__swatch legend__swatch--low"></i>Under 10%</span>
         <span class="legend__item"><i class="legend__swatch legend__swatch--mid"></i>10–20%</span>
         <span class="legend__item"><i class="legend__swatch legend__swatch--high"></i>Over 20%</span>
       </div>
+      <div id="density-tooltip" class="chart-tooltip"></div>
     </div>
     <div class="chart-container" id="rule-chart">
       <h2>Life-Saving Rule Breakdown</h2>
-      <ol class="bar-list" id="rule-chart-body"></ol>
+      <div class="donut" id="rule-chart-body"></div>
+      <div id="rule-tooltip" class="chart-tooltip"></div>
     </div>
   </section>
 
   <section class="chart-container" id="group-detail">
     <h2>Group Detail</h2>
-    <table class="detail-table">
-      <thead>
-        <tr>
-          <th>Group</th>
-          <th>Type</th>
-          <th>Total Reports</th>
-          <th>SIF Count</th>
-          <th>Density</th>
-        </tr>
-      </thead>
-      <tbody id="detail-table-body"></tbody>
-    </table>
+    <div class="table-wrap" tabindex="0">
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Type</th>
+            <th>Total Reports</th>
+            <th>SIF Count</th>
+            <th>Density</th>
+          </tr>
+        </thead>
+        <tbody id="detail-table-body"></tbody>
+      </table>
+    </div>
   </section>
 
 </main>
